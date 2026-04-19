@@ -29,7 +29,7 @@ const createOptions = (ctx: GenericCtx) => ({
     },
   },
   trustedOrigins: [
-    "https://ai-chat-app-dev.vercel.app",
+    "https://incgeni.vercel.app",
     "http://localhost:3000",
   ],
   plugins: [
