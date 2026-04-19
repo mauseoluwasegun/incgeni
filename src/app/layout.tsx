@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "incgeni",
-  description: "incgeni — AI chat app built using Next.js, Convex and Vercel AI SDK.",
+  title: "AI Chat",
+  description: "AI chat app built using Next.js, Convex and Vercel AI SDK.",
   keywords: [
     "ai",
     "ai sdk",
@@ -34,8 +34,13 @@ export const metadata: Metadata = {
     icon: [
       {
         rel: "icon",
-        url: "/favicon.png?v=2",
-        type: "image/png",
+        url: "/favicon-dark.ico",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        rel: "icon",
+        url: "/favicon-light.ico",
+        media: "(prefers-color-scheme: light)",
       },
     ],
   },
