@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTheme } from "next-themes";
 
 import UserInfo from "./UserInfo";
 import {
@@ -22,6 +23,21 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useQuery } from "convex-helpers/react/cache/hooks";
 import { api } from "@convex/_generated/api";
 import { useMutation } from "convex/react";
+
+const Logo = () => {
+  const { resolvedTheme } = useTheme();
+  const src =
+    resolvedTheme === "dark" ? "/favicon-dark.ico" : "/favicon-light.ico";
+  return (
+    <Image
+      src={src}
+      alt="incgeni logo"
+      width={22}
+      height={22}
+      className="rounded-sm"
+    />
+  );
+};
 
 const ChatSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
   const userData = useQuery(api.auth.getCurrentUser);
@@ -45,7 +61,7 @@ const ChatSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
         <SidebarMenu>
           <SidebarMenuItem>
             <Link href="/" className="p-1.5 flex gap-2 items-center">
-              <Image src="/favicon.png" alt="incgeni logo" width={22} height={22} className="rounded-sm" />
+              <Logo />
               <span className="text-base font-semibold">incgeni</span>
             </Link>
           </SidebarMenuItem>
