@@ -13,7 +13,7 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar";
 import Link from "next/link";
-import { WandSparkles } from "lucide-react";
+import Image from "next/image";
 
 import SidebarUtils from "./SidebarUtils";
 import ChatList from "./ChatList";
@@ -45,8 +45,8 @@ const ChatSidebar = ({ ...props }: React.ComponentProps<typeof Sidebar>) => {
         <SidebarMenu>
           <SidebarMenuItem>
             <Link href="/" className="p-1.5 flex gap-2 items-center">
-              <WandSparkles className="size-5" />
-              <span className="text-base font-semibold">Ai Chat</span>
+              <Image src="/favicon.png" alt="incgeni logo" width={22} height={22} className="rounded-sm" />
+              <span className="text-base font-semibold">incgeni</span>
             </Link>
           </SidebarMenuItem>
         </SidebarMenu>
